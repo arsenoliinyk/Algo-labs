@@ -1,4 +1,7 @@
-import time, sys, os
+import os
+import sys
+import time
+
 from merge_sort import merge_sort, Sort
 
 arr = []
@@ -15,14 +18,14 @@ if __name__ == '__main__':
     arr = [int(i) for i in arr]
 
     start_time = time.time()
-    comparisons = merge_sort(arr, sort_type)
+    comparisons = 0
     end_time = time.time()
     general_time =  start_time - end_time
 
-    print("MERGE SORTz")
+    print("MERGE SORT:")
     print("time execution: ", general_time)
+    print(merge_sort(arr, sort_type, comparisons))
     print("compares", comparisons)
-    print(arr)
 
     command = "python -m unittest test_merge_sort.py"
     os.system(command)
